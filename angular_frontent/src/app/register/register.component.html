@@ -1,0 +1,86 @@
+<section class="container mt-md-4  w-50 border">
+<h2 class="card-header mb-2 text-center">Register for a new user</h2>
+<div class="form-group">
+    <form (ngSubmit)="register(createForm)" #createForm = "ngForm">
+        
+        <div>
+            <input type="text" class="form-control mb-2"
+            placeholder="full Name"
+            required
+            name="fName"
+            #fullName = "ngModel"
+            [(ngModel)] = "user.fullName">
+        </div>
+        <div *ngIf="fullName.touched && fullName.invalid" class="text-primary">
+            please fill it up
+        </div>
+        <div>
+            <input type="text" #userName = "ngModel" class="form-control mb-2 "
+            placeholder="user Name"
+            required
+            name="userName"
+            [(ngModel)] = "user.userName">
+        </div>
+        <div *ngIf = "userName.touched && userName.invalid" class="text-primary">
+            please fill it up
+        </div>
+        <div>
+            <input type="text" #email = "ngModel" class="form-control mb-2 "
+            placeholder="something@email.com"
+            required
+            name="eid"
+            [(ngModel)] = "user.email">
+        </div>
+        <div *ngIf = "email.touched && email.invalid" class="text-primary">
+            please fill it up
+        </div>
+        <div>
+            <input type="text" #nationality = "ngModel" class="form-control mb-2 "
+            placeholder="nationality"
+            name="nationality"
+            [(ngModel)] = "user.nationality">
+        </div>
+        <div>
+            <input type="text" #dateOfBirth = "ngModel" class="form-control mb-2 "
+            placeholder="date Of Birth"
+            name="dateOfBirth"
+            [(ngModel)] = "user.dateOfBirth">
+        </div>
+        <div>
+            <input type="password" #pass1 = "ngModel" class="form-control mb-2 "
+            placeholder="password"
+            required
+            name="pass"
+            [(ngModel)] = "pass">
+        </div>
+        <div>
+            <input type="password" #pass2 = "ngModel" class="form-control mb-2 "
+            placeholder="re-password"
+            required
+            name="rePass"
+            [(ngModel)] = "rePass">
+        </div>
+        <div *ngIf="pass1.value!=pass2.value">incorrect password</div>
+        <div>
+            <input type="checkbox" #chckBox = "ngModel" 
+                   name="ckBox"
+                   [(ngModel)] = "agree"> 
+                   All the info I have provided is valid
+        </div>
+        <div *ngIf="pass1.value==pass2.value && pass1.valid && chckBox.value==true">
+            <!-- <input type="submit"> -->
+            <button type = "submit" class="btn btn-primary w-100">submit</button>
+        </div>
+        
+    </form>
+
+    <div *ngIf = "failed" class="text-info">
+        please fill up carefully            
+    </div>
+    <div class="mt-4 text-info">
+        please fillup all field to see submit button
+    </div>
+
+</div>
+</section>
+

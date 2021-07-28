@@ -1,0 +1,12 @@
+a{
+    text-decoration: none;
+}
+.links, .links a {
+    padding: 10px;
+   }
+   .links a.active {
+    background-color: black;
+   }
+   a:hover{
+    color: #ff0000;
+   }

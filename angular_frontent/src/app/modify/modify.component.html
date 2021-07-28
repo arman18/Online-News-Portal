@@ -1,0 +1,22 @@
+<div class="container w-50 mt-md-4">
+    <form (ngSubmit)="modifyNews()" #newsForm = "ngForm">
+        <div> 
+            <input type="text" #title="ngModel" class="form-control mb-2"
+                placeholder="title" required
+                name = "title" [(ngModel)] = "news.title">
+        </div>
+        <div> 
+                <textarea class="form-control mb-2" #content="ngModel"
+                placeholder="Contents" required
+                name = "contents" [(ngModel)] = "news.content"
+                rows="15" cols="30"  style="white-space: pre-wrap;"></textarea>
+        </div>
+        <div *ngIf = "newsForm.valid">
+            <button type = "submit" class="btn btn-primary w-100">submit</button>
+        </div>
+    </form>
+    <div *ngIf = "notModified">
+        please follow instrucion carefully
+    </div>
+
+</div>

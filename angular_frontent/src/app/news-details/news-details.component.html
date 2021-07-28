@@ -1,0 +1,19 @@
+<div class="title display-5 bg-success py-3 text-center">{{news.title}} </div> 
+<!-- <div>{{news.id}} </div>  -->
+<div class="container my-4">{{news.content}} </div> 
+
+<section class="container border">
+<textarea type = "textArea" placeholder="type new Comment" name = "comment" rows="3"
+    required #commentBox="ngModel" [(ngModel)] = "comment" class="form-control mb-2"
+></textarea>
+
+<button (click)="doComment()" class="btn btn-primary w-25">comment</button>
+
+<hr/>
+<div *ngFor = "let comment of news.comments" >
+<dl>
+    <dt>{{comment.name}} </dt>
+    <dd class="ms-4">{{comment.comment}} </dd>
+</dl>
+</div>
+</section>

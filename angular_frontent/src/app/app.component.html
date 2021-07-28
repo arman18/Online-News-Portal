@@ -1,0 +1,41 @@
+<header class="bg-dark py-2 mb-2 sticky-top">
+<nav class="container">
+    <ul class="nav navbar-dark bg-dark">
+        <li class="nav-link ml-3">
+            <a routerLink="/" >Home</a>
+        </li>
+        <form class="d-flex me-auto" (ngSubmit)="searchNews()" >
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchID"
+            name = "search"
+            [(ngModel)] = "search">
+            <!-- <a routerLink="/"> -->
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <!-- </a> -->
+          </form>
+        <li *ngIf = "!loginInfoService.isLogged()" class="nav-link .nav-pills">
+            <a routerLink="/login" routerLinkActive="active">
+                Login</a>
+        </li>
+        
+        <li *ngIf = "!loginInfoService.isLogged()" class="nav-link">
+            <a routerLink="/register" routerLinkActive="active">
+                Register</a>
+        </li>
+        <li *ngIf = "loginInfoService.isAdmin()" class="nav-link">
+            <a routerLink="/news/create" routerLinkActive="active">
+                Create</a>
+        </li>
+        <li *ngIf = "loginInfoService.isLogged()" class="nav-link">
+            <a (click)="loginInfoService.store(null,false)" routerLink="/"
+            >Logout</a>
+        </li>
+        <li *ngIf = "loginInfoService.isLogged()" class="nav-link">
+            <a routerLink="/user/edit/{{loginInfoService.currentUser.id}}" routerLinkActive="active">
+                {{loginInfoService.getName()}}
+            </a>
+        </li>
+    </ul>
+</nav>
+</header>
+   
+   <router-outlet></router-outlet>

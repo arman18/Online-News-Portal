@@ -1,0 +1,19 @@
+<div *ngFor = 'let news of newses' class="container">
+    
+    <a routerLink="/news/details/{{news.id}}" class="col-10">
+        <app-news-item [news]="news"></app-news-item>
+    </a>
+
+    <div *ngIf = "loginInfoService.isAdmin()" style="position: relative; margin-top: -40px; margin-left: 17.5%;" 
+    class="mb-3 ">
+    <a  class="btn rounded-1 border-dark col-2 me-1 btn-sm" 
+        routerLink="/news/modify/{{news.id}}">
+        modify
+    </a>
+    
+    <button  class="btn btn-danger btn-sm"
+        (click)="deleteNews(news.id)">
+        delete
+    </button>
+    </div>
+</div>

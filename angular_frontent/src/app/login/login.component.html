@@ -1,0 +1,33 @@
+<form (ngSubmit)="login(loginForm)" #loginForm = "ngForm" class="container w-50 mt-md-4">
+<div class="">
+    <input type="text" class="form-control mb-2"
+    placeholder="email"
+    name="email"
+    required  
+    #text = "ngModel"      
+    [(ngModel)] = "email">
+</div>
+<div *ngIf = "submitClicked && text.invalid">
+    please fill it up
+</div>
+<div class="">
+    <input type="password" class="form-control mb-2"
+    placeholder="password"
+    name="passwrd" 
+    required
+    #pass = "ngModel"         
+    [(ngModel)] = "password">
+</div>
+<div *ngIf = "submitClicked && pass.invalid">
+    please fill it up
+</div>
+<div>
+    <input type="checkbox" class="mb-4"
+    name="ckbox"        
+    [(ngModel)] = "isAdmin"> I am an admin   
+</div>
+<div>
+    <button type = "submit" class="btn btn-primary w-100">Login</button>
+</div>
+</form>
+<div *ngIf = "showErrMessage">login failed!!</div>
