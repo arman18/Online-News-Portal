@@ -31,12 +31,12 @@ namespace Server
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), @"upload")),
-                RequestPath = new PathString("/upload")
-            });
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(Directory.GetCurrentDirectory(), @"upload")),
+            //    RequestPath = new PathString("/upload")
+            //});
             
             if (env.IsDevelopment())
             {
