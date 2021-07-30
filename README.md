@@ -1,5 +1,12 @@
 # Online-News-Portal
-This project is made by angular as frontend and .NET for backend API
+This project is developed by angular as frontend and .NET for backend API. It is developed for our webtech course final project
+
+
+
+https://user-images.githubusercontent.com/43715453/127595830-7ce3bde8-52f2-4e67-b91b-6da7adfdc92c.mp4
+
+
+
 # how to run 
 #running API
 1. run microsft SQL server management studio
