@@ -26,6 +26,6 @@ This project is made by angular as frontend and .NET for backend API
 # project description 
 
 1. There are three kinds of user
-	-- guest user: can read news, search news, see comment, register for a account, login
-	-- registered user: in addition to guest user he can commment and manage his account
-	-- admin: in addition to registered user admin can modify,delete,create and manage account
+	* guest user: can read news, search news, see comment, register for a account, login
+	* registered user: in addition to guest user he can commment and manage his account
+	* admin: in addition to registered user admin can modify,delete,create and manage account
